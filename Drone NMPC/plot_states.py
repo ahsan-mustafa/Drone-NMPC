@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d, Axes3D
 from obstacles import Obstacles
 from drone import Drone
+import os
 
 class States_Plot(Obstacles, Drone):
 
@@ -76,8 +77,12 @@ class States_Plot(Obstacles, Drone):
         axs2[1, 2].set_title('2D Displacement', fontsize=font_size)
         
         plt.tight_layout()
-        plt.savefig('drone_states.png')
+        script_dir = os.path.dirname(os.path.abspath(__file__))   # folder of this script
+        save_path = os.path.join(script_dir, "drone_arena.png")  # full path
+
+        plt.savefig(save_path)
         # plt.show(block=False)
 
         # input("Press Enter to close all plots...")
         # plt.close('all')
+
