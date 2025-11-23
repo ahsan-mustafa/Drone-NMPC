@@ -4,6 +4,7 @@ from mpl_toolkits.mplot3d import axes3d, Axes3D
 from obstacles import Obstacles
 from gates import Gates
 from drone import Drone
+import os
 
 class Drone_Arena_Plot(Obstacles, Gates, Drone):
 
@@ -63,4 +64,8 @@ class Drone_Arena_Plot(Obstacles, Gates, Drone):
         self.plot_trajectory(x, y, z, initial_point, final_point)
         self.plot_drone(x, y, z)
         # plt.show(block=False)
-        plt.savefig('drone_arena.png')
+        script_dir = os.path.dirname(os.path.abspath(__file__))   # folder of this script
+        save_path = os.path.join(script_dir, "drone_arena.png")  # full path
+
+        plt.savefig(save_path)
+
