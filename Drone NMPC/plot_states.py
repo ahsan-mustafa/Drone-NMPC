@@ -78,11 +78,12 @@ class States_Plot(Obstacles, Drone):
         
         plt.tight_layout()
         script_dir = os.path.dirname(os.path.abspath(__file__))   # folder of this script
-        save_path = os.path.join(script_dir, "drone_arena.png")  # full path
+        save_path = os.path.join(script_dir, "drone_states.png")  # full path
 
         plt.savefig(save_path)
         # plt.show(block=False)
 
         # input("Press Enter to close all plots...")
         # plt.close('all')
+
 
